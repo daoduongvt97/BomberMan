@@ -113,20 +113,30 @@ public class Bomber extends Character {
         // TODO: nhớ cập nhật lại giá trị cờ _moving khi thay đổi trạng thái di chuyển
         if(_input.up) {
             this.move(this._x, this._y-1);
+            this._moving = true;
+            _direction = 0;
             System.out.println("up");
         }
         if(_input.down) {
             this.move(this._x, this._y+1);
+            _direction = 2;
+            this._moving = true;
             System.out.println("down");
         }
         if(_input.right) {
             this.move(this._x+1, this._y);
+            this._moving = true;
+            _direction = 1;
             System.out.println("right");
         }
         if(_input.left) {
             this.move(this._x-1, this._y);
+            this._moving = true;
+            _direction = 3;
             System.out.println("left");
         }
+        if(_input.up == _input.right == _input.down ==_input.left)
+            this._moving = false;
     }
 
     @Override
