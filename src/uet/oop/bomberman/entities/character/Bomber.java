@@ -111,6 +111,22 @@ public class Bomber extends Character {
     protected void calculateMove() {
         // TODO: xử lý nhận tín hiệu điều khiển hướng đi từ _input và gọi move() để thực hiện di chuyển
         // TODO: nhớ cập nhật lại giá trị cờ _moving khi thay đổi trạng thái di chuyển
+        if(_input.up) {
+            this.move(this._x, this._y-1);
+            System.out.println("up");
+        }
+        if(_input.down) {
+            this.move(this._x, this._y+1);
+            System.out.println("down");
+        }
+        if(_input.right) {
+            this.move(this._x+1, this._y);
+            System.out.println("right");
+        }
+        if(_input.left) {
+            this.move(this._x-1, this._y);
+            System.out.println("left");
+        }
     }
 
     @Override
@@ -123,6 +139,8 @@ public class Bomber extends Character {
     public void move(double xa, double ya) {
         // TODO: sử dụng canMove() để kiểm tra xem có thể di chuyển tới điểm đã tính toán hay không và thực hiện thay đổi tọa độ _x, _y
         // TODO: nhớ cập nhật giá trị _direction sau khi di chuyển
+        this._x = xa;
+        this._y = ya;
     }
 
     @Override
